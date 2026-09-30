@@ -1,0 +1,99 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    var totalProducts = (int)ViewBag.TotalProducts;
+    var totalUnits = (int)ViewBag.TotalUnits;
+    var stockValue = (decimal)ViewBag.StockValue;
+    var lowStock = (List<Product>)ViewBag.LowStock;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0"><i class="bi bi-speedometer2"></i> Dashboard</h2>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="card stat-card h-100 border-start border-primary border-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="text-muted mb-1">Total Products</h6>
+                        <h3 class="mb-0">@totalProducts</h3>
+                    </div>
+                    <i class="bi bi-box-seam fs-1 text-primary opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card stat-card h-100 border-start border-success border-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="text-muted mb-1">Units in Stock</h6>
+                        <h3 class="mb-0">@totalUnits.ToString("N0")</h3>
+                    </div>
+                    <i class="bi bi-stack fs-1 text-success opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card stat-card h-100 border-start border-info border-4">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <h6 class="text-muted mb-1">Stock Value</h6>
+                        <h3 class="mb-0">@stockValue.ToString("C")</h3>
+                    </div>
+                    <i class="bi bi-currency-dollar fs-1 text-info opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-warning bg-opacity-25 d-flex justify-content-between align-items-center">
+        <h5 class="mb-0"><i class="bi bi-exclamation-triangle-fill text-warning"></i> Low Stock Alerts</h5>
+        <span class="badge bg-danger">@lowStock.Count</span>
+    </div>
+    <div class="card-body p-0">
+        @if (lowStock.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>SKU</th>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th class="text-end">In Stock</th>
+                            <th class="text-end">Reorder Level</th>
+                            <th class="text-end">Unit Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in lowStock)
+                        {
+                            <tr class="low-stock">
+                                <td><code>@p.SKU</code></td>
+                                <td>@p.Name</td>
+                                <td>@p.Category?.Name</td>
+                                <td class="text-end"><span class="badge badge-low">@p.QuantityInStock</span></td>
+                                <td class="text-end">@p.ReorderLevel</td>
+                                <td class="text-end">@p.UnitPrice.ToString("C")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="p-4 text-center text-muted">
+                <i class="bi bi-check-circle fs-1"></i>
+                <p class="mb-0 mt-2">All products are above reorder level. Great job!</p>
+            </div>
+        }
+    </div>
+</div>

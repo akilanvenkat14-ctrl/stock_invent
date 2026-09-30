@@ -1,0 +1,30 @@
+@model Product
+@{
+    ViewData["Title"] = "Delete Product";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-danger">
+            <div class="card-header bg-danger text-white"><h5 class="mb-0">Confirm Delete</h5></div>
+            <div class="card-body">
+                <p>Are you sure you want to delete this product?</p>
+                <dl class="row">
+                    <dt class="col-sm-4">SKU</dt>
+                    <dd class="col-sm-8"><code>@Model.SKU</code></dd>
+                    <dt class="col-sm-4">Name</dt>
+                    <dd class="col-sm-8">@Model.Name</dd>
+                    <dt class="col-sm-4">Category</dt>
+                    <dd class="col-sm-8">@Model.Category?.Name</dd>
+                    <dt class="col-sm-4">In Stock</dt>
+                    <dd class="col-sm-8">@Model.QuantityInStock</dd>
+                </dl>
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

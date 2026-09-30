@@ -1,0 +1,9 @@
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\StockInventory.csproj.AssemblyReference.cache
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\StockInventory.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\StockInventory.AssemblyInfoInputs.cache
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\StockInventory.AssemblyInfo.cs
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\StockInventory.csproj.CoreCompileInputs.cache
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\StockInventory.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\StockInventory.RazorAssemblyInfo.cache
+C:\Users\ELCOT\Documents\stock inventry_grok\StockInventory\obj\Debug\net8.0\StockInventory.RazorAssemblyInfo.cs

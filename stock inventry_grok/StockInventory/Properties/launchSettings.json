@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "StockInventory": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:58485;http://localhost:58486"
+    }
+  }
+}
